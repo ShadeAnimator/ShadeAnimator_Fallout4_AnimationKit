@@ -1,0 +1,32 @@
+[HAVOK SKELETON DEFINITION FILE]
+
+[BONES START]
+Root
+COM
+Pelvis
+LLeg_Thigh
+LLeg_Calf
+LLeg_Foot
+RLeg_Thigh
+RLeg_Calf
+RLeg_Foot
+SPINE1
+SPINE2
+Chest
+Neck
+HEAD
+LArm_Collarbone
+LArm_UpperArm
+LArm_ForeArm1
+LArm_ForeArm2
+LArm_ForeArm3
+LArm_Hand
+RArm_Collarbone
+RArm_UpperArm
+RArm_ForeArm1
+RArm_ForeArm2
+RArm_ForeArm3
+PipboyBone
+RArm_Hand
+[END]
+
