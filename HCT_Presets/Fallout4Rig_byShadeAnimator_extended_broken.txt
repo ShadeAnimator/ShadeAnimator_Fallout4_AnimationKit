@@ -26,7 +26,23 @@ RArm_UpperArm
 RArm_ForeArm1
 RArm_ForeArm2
 RArm_ForeArm3
+PipboyBone
 RArm_Hand
+WeaponLeft
+Weapon
+WeaponBolt
+WeaponExtra1
+WeaponExtra2
+WeaponExtra3
+WeaponMagazine
+WeaponMagazineChild1
+WeaponMagazineChild2
+WeaponMagazineChild3
+WeaponMagazineChild4
+WeaponMagazineChild5
+WeaponOptics1
+WeaponOptics2
+WeaponTrigger
 LArm_UpperTwist1
 LArm_UpperTwist2
 RArm_UpperTwist1
@@ -64,8 +80,13 @@ RArm_Finger51
 RArm_Finger52
 RArm_Finger53
 Camera
+Camera Control
 AnimObjectA
 AnimObjectB
+WeaponIKTargetL
+WeaponIKTargetR
+WeaponIKTargetLMirror
+WeaponIKTargetRMirror
 AnimObjectL1
 AnimObjectL2
 AnimObjectL3
