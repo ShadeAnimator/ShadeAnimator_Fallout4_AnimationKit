@@ -1,8 +1,3 @@
-Thanks to JoshNZ for initial setup, which allowed me to dig it further.
-Thanks to everyone else from loverslab.com who helped.
-
-Updated version of this text will be here: http://www.loverslab.com/topic/64567-fallout-4-animation-modding-for-modders-and-animators/
-
 Making animations for Fallout 4.
 This thread is for animators and modders.
 
@@ -10,6 +5,42 @@ It is here to discuss animation tools, plugins and everything required to create
 
 
 Unlike Skyrim, information about making animation for Fallout 4 is still under heavy research, however we've already made some progress. 
+
+
+General Software information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[spoiler]
+3ds max
+It's the primary and most advanced package to work with Fallout4 animations so far. It has all the tools needed, all the plugins, and in some cases these plugins are more feature-full than in other software.
+
+Main reason why it's currently the best solution for animations is that is has HavokContentTools and niftools plugins are compiled and available for it from the official niftools github repo.
+
++ HCT
++ Niftools Plugin
+
+
+Maya
+Maya may be the second tool in this list, because it also has HCT and niftools plugin, and can use same HCT presets. But it is much harder to find the right compiled niftools plugin. I did not find it yet, for Maya 2013-2015. If someone can compile it for Maya 2015, it would be perfect!
+
+But since in fact niftools plugin is only required to import and export MESHES it should be possible to export meshes and joints as FBX into maya, and then work in it from there.
+
+Blender
+Bad news for blender users, it does not have HCT plugin available. Without it, currently it is not possible to export *.hkx animation files, until some third-party tool arrives.
+
+However it should be possible to create a blender scene for animation and use it to animate, then export FBX animation, bring it into 3ds max, and export from there.
+
+
+Universal
+The real breakthrough can at some point come from DexesTTP with his hkx tools, he is basically working on a standalone COLLADA => HKX converter. COLLADA format is available for both max and maya, and, i'm not sure, but I think blender too. It will make the process of exporting animations as simple as exporting an animation file into collada format with built-in tools, and converting it with a converter.
+
+Once the converter is ready it will be even possible to automate the process to just 1 button click, a script can then export an animation, and launch external converter to convert it into hkx, so it will look like it just exported into hkx :D
+[/spoiler]
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3DS MAX
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 
 TOOLS AND FILES
@@ -28,7 +59,7 @@ So, this kit has:
 * niftools plugin for 3ds max
 
 Now, you also NEED TO FIND:
-* HavokContentTools 2014 (last I know of, it has plugins for max 2012-2015)
+* HavokContentTools 2014 (last I know of, it has plugins for max 2012-2015. I can help you find these tools.)
 * 3ds max (obviously :D)
 
 
@@ -127,6 +158,38 @@ Then, in the game, open console with ~, and type:
 player.playidle IdleUseJet
 
 And you should see your animation playing.
+[/spoiler]
+
+
+ANNOTATIONS (UNTESTED YET)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[spoiler]
+Anotations allow you to trigger different events at specific animation frames, through animation. This is usually used for sounds (footsteps for example), showing\hiding stuff (showing and hiding Phycho jet model in char's arm for example), and some other things.
+
+To add annoations to your animation:
+
+If you are using your own scene:
+
+1. Select Root joint.
+2. Open DopeSheet.
+3. Select Root joint there.
+4. Go to - Edit - Note Track - Add (note that in earlier max versions location of this button was different)
+
+If you're using scenes shipped with SAAnimationKit, this track should already exist there.
+
+To add annotation:
+
+1. Keys - Add Keys tool
+2. Click wherever you want to place a key
+3. Exit this tool
+4. Right click and write your annotation
+
+Now they should export. If not, try ticking Annotations in Prune Type filter.
+
+List of annotations is currently unknown to me.
+
+Process is similar to the one shown in this video: https://vimeo.com/113225958
+From here: http://www.loverslab.com/topic/39996-3ds-max-skyrim-video-animation-tutorial/
 [/spoiler]
 
 IMPORTING NEW PREVIEW MESHES INTO EXISTING SCENE
@@ -228,3 +291,4 @@ However I can't guarantee that I will save all files under for max 2013.
 [/spoiler]
 
 I will keep an eye on information about moving animation modding into Maya as well, but Blender guys have to research stuff themselves. I will, hovewer, add information about Blender to this header post, just send it to me, ill review it and post here.
+
