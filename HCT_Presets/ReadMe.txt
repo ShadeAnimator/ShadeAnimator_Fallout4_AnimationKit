@@ -1,0 +1,1 @@
+Fallout4Rig_byShadeAnimator_FULL.txt is the latest version, and contains all joints. Works with the Rig_01.max scene.
