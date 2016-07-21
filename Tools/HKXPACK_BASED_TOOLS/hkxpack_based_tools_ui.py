@@ -2,6 +2,8 @@ import sys
 import os
 from PySide import QtGui, QtCore
 import subprocess
+from bs4 import BeautifulSoup
+
 
 rp = os.path.dirname(os.path.realpath(__file__))
 hkxCliJar = os.path.join(rp, 'hkxpack-cli.jar')
@@ -78,7 +80,10 @@ class MainForm(QtGui.QMainWindow):
         self.pb = QtGui.QProgressBar()
 
         self.button = QtGui.QPushButton("Process")
-        self.button.clicked.connect(self.doAction)
+        self.button.clicked.connect(self.convertXmlHkx)
+
+        self.getTxtButton = QtGui.QPushButton("Generate Rig TXT from skeleton.hkx\\xml")
+        self.getTxtButton.clicked.connect(self.generateRigTxt)
 
         self.remove = QtGui.QPushButton("Remove selected")
         self.remove.clicked.connect(self.removeSelected)
@@ -90,6 +95,7 @@ class MainForm(QtGui.QMainWindow):
         self.mainLayout.addWidget(self.view)
         #self.mainLayout.addWidget(self.groupBox)
         self.mainLayout.addWidget(self.button)
+        self.mainLayout.addWidget(self.getTxtButton)
         self.mainLayout.addWidget(self.remove)
         self.mainLayout.addWidget(self.clear)
         self.mainLayout.addWidget(self.pb)
@@ -107,7 +113,7 @@ class MainForm(QtGui.QMainWindow):
                 item = QtGui.QListWidgetItem(url, self.view)
                 item.setStatusTip(url)
 
-    def doAction (self, action = 'pack'):
+    def convertXmlHkx (self, action = 'pack'):
         self.pb.setMaximum(self.view.count())
         self.pb.setValue(0)
         for i in range (self.view.count()):
@@ -124,6 +130,45 @@ class MainForm(QtGui.QMainWindow):
 
             else:
                 print "File", file, "is not hkx or xml. Skipped."
+
+            self.pb.setValue(i+1)
+
+    def generateRigTxt(self):
+        self.pb.setMaximum(self.view.count())
+        self.pb.setValue(0)
+        for i in range (self.view.count()):
+            file = self.view.item(i).text()
+            fileExtension = file.split('.')[-1]
+
+            #if the file is hkx, we need to convert it to xml first.
+            if fileExtension == "hkx" or fileExtension == "HKX":
+                print ">>> Converting", file, "to xml"
+                subprocess.call(['java', '-jar', hkxCliJar, 'unpack', file])
+                file = file.replace('.hkx', '.xml').replace('.HKX', '.XML')
+
+            #read xml and extract data
+            print "Reading file..."
+            with open(file, 'r') as fileData:
+                soup = BeautifulSoup(fileData.read(), 'xml')
+
+            skeleton = soup.find('hkparam', {"name":"bones"})
+            bones = []
+            for child in skeleton.contents:
+                childSoup = BeautifulSoup(str(child), 'xml')
+                boneNameParam = childSoup.find('hkparam', {"name":"name"})
+                if boneNameParam != None:
+                    bone = str(boneNameParam).split('"name">')[1].split('</hkparam>')[0]
+                    bones.append(bone)
+
+            #generate txt
+            output = '[HAVOK SKELETON DEFINITION FILE]\n\n[BONES START]'
+            for bone in bones:
+                output += "\n"+str(bone)
+
+            output += "\n[END]"
+
+            with open(file.replace('.xml', '.txt').replace('.XML', '.TXT'), 'w') as newFile:
+                newFile.write(output)
 
             self.pb.setValue(i+1)
 
