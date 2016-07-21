@@ -3,8 +3,8 @@
 block_cipher = None
 
 
-a = Analysis(['E:\\PersonalWork\\MODDING\\GAMES\\FO4\\Tools\\HKXPACK_UI\\hkxpack_gui.py'],
-             pathex=['E:\\PersonalWork\\MODDING\\GAMES\\FO4\\Tools\\HKXPACK_UI'],
+a = Analysis(['E:\\PersonalWork\\MODDING\\GAMES\\FO4\\ShadeAnimator_Fallout4_AnimationKit\\Tools\\HKXPACK_BASED_TOOLS\\hkxpack_based_tools_ui.py'],
+             pathex=['E:\\PersonalWork\\MODDING\\GAMES\\FO4\\ShadeAnimator_Fallout4_AnimationKit\\Tools\\HKXPACK_BASED_TOOLS'],
              binaries=None,
              datas=None,
              hiddenimports=[],
@@ -21,7 +21,7 @@ exe = EXE(pyz,
           a.binaries,
           a.zipfiles,
           a.datas,
-          name='hkxpack_gui',
+          name='hkxpack_based_tools_ui',
           debug=False,
           strip=False,
           upx=True,
