@@ -9,7 +9,7 @@ Unlike Skyrim, information about making animation for Fallout 4 is still under h
 
 General Software information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 3ds max
 It's the primary and most advanced package to work with Fallout4 animations so far. It has all the tools needed, all the plugins, and in some cases these plugins are more feature-full than in other software.
 
@@ -34,7 +34,12 @@ Universal
 The real breakthrough can at some point come from DexesTTP with his hkx tools, he is basically working on a standalone COLLADA => HKX converter. COLLADA format is available for both max and maya, and, i'm not sure, but I think blender too. It will make the process of exporting animations as simple as exporting an animation file into collada format with built-in tools, and converting it with a converter.
 
 Once the converter is ready it will be even possible to automate the process to just 1 button click, a script can then export an animation, and launch external converter to convert it into hkx, so it will look like it just exported into hkx :D
-[/spoiler]
+
+HavokContentTools 2014
+Basic version, required to create animations, was actually available for free from the official site. Until Microsoft bought them, and removed from the site. But they officially allow those people, who still have them, to keep using them. And while redistribution is not allowed by the license, you don't need to provide any license keys or anything to install the plugin, which really makes redistribution untraceable.
+
+So while I'm not approving piracy, finding HCT2014 is possible.
+~~~~~~~~
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +50,7 @@ Once the converter is ready it will be even possible to automate the process to 
 
 TOOLS AND FILES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 I try to collect all the tools required to create animations here: 
 https://github.com/ShadeAnimator/ShadeAnimator_Fallout4_AnimationKit
 
@@ -70,21 +75,21 @@ These tools are included in the Kit, just to make it easier to start animating. 
  https://github.com/niftools/
  https://github.com/Dexesttp/hkxpack
 
-[/spoiler]
+~~~~~~~~
 
 NOVICE NOTICE:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 Not included, but really needed is some basic knowledge of 3ds max and rigging and animating. If you never rigged and animated anything before, all this might be very overwhelming for you, but for anyone who has at least some rigging and animation experience, and even better - some realization of how 3d animation works in general - all this should be really easy to follow.
 
 If you want to start animating for Fallout4 or any other game, but you have no experience with animation and rigging, I'd suggest you starting with someting else first. But if you absolutely sure that you want to make animations for FO4 (or need to), then I'd sugget you first going through some tutorials.
 
 I may suggest Digital Tutors, tutorials like intro to 3ds max, rigging (preferably not CAT or Biped but tutorials about making custom rigs, they will give you the understanding you need.) and animation.
-[/spoiler]
+~~~~~~~~
 
 GLOSSARY
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 Just so we are on the same page. Here are some terms:
 
 Rig - this can be a misquiding word, because it usually means not just one thing, but it includes a few things. Which are:
@@ -104,11 +109,11 @@ In 3ds max there are 3 ways to create Control Rig:
 3. Using Biped - less feature-full and older built-in plugin for max, which allows you to quickly rig a humanoid character.
 
 Rig File - this is something specific to Fallout4 and Skyrim, rig file is a txt file required by Havok Content Tools to define the joints and their order upon export.
-[/spoiler]
+~~~~~~~~
 
 BASIC WORKFLOW
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 The basic workflow is this:
 
 1. You either make a copy of one of the supplied scenes, or reference them into a new 3ds max scene. Either way, just preferably don't mess with original files, or have a backup somewhere.
@@ -131,16 +136,16 @@ Click Run Configuration. Or Run Configurations, whatever  button you like most.
 
 Now, if there were no errors, you should have your fresh animation file! Yay!
 
-If there were errors, check these steps again, and if you still can't export your file... Well, you can try finding ShadeAnimator on loverslab.com and asking him for help.
+If there were errors, check these steps again, and if you still can't export your file...
 
 
 HINT:
 Any MESH object in 3ds max scene, is there just for preview purposes. It won't be exported with animation. Max scene files come with a few meshes included, you can Hide and show them however you like. For example there is a CBBE body which might be more pleasant to look at while animating. Also there are a few hair styles. And you can import more meshes. How? Described in another section of this text.
-[/spoiler]
+~~~~~~~~
 
 TESTING ANIMATIONS IN THE GAME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 You may have to add this to the Fallout4Custom.ini inside the /MyDocuments/My Games/Fallout4 folder:
 
 [Archive]
@@ -158,12 +163,12 @@ Then, in the game, open console with ~, and type:
 player.playidle IdleUseJet
 
 And you should see your animation playing.
-[/spoiler]
+~~~~~~~~
 
 
 ANNOTATIONS (UNTESTED YET)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 Anotations allow you to trigger different events at specific animation frames, through animation. This is usually used for sounds (footsteps for example), showing\hiding stuff (showing and hiding Phycho jet model in char's arm for example), and some other things.
 
 To add annoations to your animation:
@@ -189,12 +194,11 @@ Now they should export. If not, try ticking Annotations in Prune Type filter.
 List of annotations is currently unknown to me.
 
 Process is similar to the one shown in this video: https://vimeo.com/113225958
-From here: http://www.loverslab.com/topic/39996-3ds-max-skyrim-video-animation-tutorial/
-[/spoiler]
+~~~~~~~~
 
 IMPORTING NEW PREVIEW MESHES INTO EXISTING SCENE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 This Animation Kit comes with a few basic meshes already. But sometimes you may need or just want to test your animations with some specific ones. Adding new meshes into 3ds max is simple, and you should have everything you need.
 
 So, the tools you'll need are:
@@ -217,29 +221,60 @@ Now, assuming you already have the rig or animation scene open, to get them into
 
 Now, UNTICK the Import Skeleton checkbox, since we're importing it into a scene 
 
-[/spoiler]
+~~~~~~~~
 
-HOW TO IMPORT SKELETON FOR ANIMATION YOURSELF
+HOW TO IMPORT SKELETON FOR ANIMATION YOURSELF AND CREATE A RIG.TXT FILE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 Well, there is really no magic here, and there just a few steps to importing the skeleton and mesh into max from scratch, and setting it up for export.
+First you need to extract two archives: Meshes and Animations. They have everything you need for animations.
 
-All you need to do, is import FemaleBody or MaleBody or whatever *.nif file you want using NifTools plugin. From this folder, from Meshes archive:
+All you need to do, is import two files. First is the mesh *.nif files, and second is the skeleton.nif files, which is unique for each creature.
+Using Deathclaw as example, you can find them here:
+\Fallout 4\Data\Meshes\Actors\Deathclaw\Deathclaw.nif (Mesh)
+\Fallout 4\Data\Meshes\Actors\Deathclaw\CharacterAssets\skeleton.nif
 
-Fallout 4\Data\Meshes\Actors\Character\CharacterAssets
+You will also need a skeleton.hkx file to get the order of joints for rig.txt. (Rig.txt is just a txt file you load into HCT as a preset of a rig, you can name it however you want).
+\Fallout 4\Data\Meshes\Actors\Deathclaw\CharacterAssets\skeleton.hkx
 
-You should also point it to the skeleton.nif file. This file you can find inside the Animations archive, same folder.
-
-So just extract both Animation and Meshes archives and you should easily find those files.
+The path convention is the same for all creatures. Or at least it should be. If not, try using logic and locating these files :)
 
 And you import it with default settings. Now you can import additional meshes as discussed in another section of this text, if you need.
 
+To create a rig.txt:
+You can use my tool, which is on git, under HKXPACK_BASED_TOOLS
+Give it a skeleton.hkx and press generate rig.txt, it will do the rest.
+
+You can do it manually. Convert skeleton.hkx to xml using hkxpack, and then find the "bones" there, and create the following file:
+[HAVOK SKELETON DEFINITION FILE]
+
+[BONES START]
+Bone
+Bone
+Bone
+[BONES END]
+
+just replace Bone Bone Bone with your joints.
+
+Now, thats not all. 
+
+Open your scene, go to Havok Export, and try to load the rig.txt file under the Create Skeletons filter. It will probably show a few errors, saying that it can't find some joints. It's common.
+
+First, check if there are joints in your scene named in CAPS. Like commonly, Weapon is called WEAPON. Renamed them in your scene to match the naming from the rig.txt file.
+
+Then, if there are still missing joints, if you think they are not sagnificant for animation - you can just create a joints anywhere in the hierarchy with the name of a missing joints.
+
+Otherwise you may have to check other nif files for those joints. For example for human I had to import pistol and dummy weapons to get all the joints needed. But for creatures you will probably only need to create, say, a Camera joint, it should not be an issue really.
+
+Thats all.
+
+
 Now, setting it up for export.
-[/spoiler]
+~~~~~~~~
 
 MANUAL RIG EXPORT SETUP PROCESS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 Okay, so, to export animation for FO4 from max you need:
 
 * max 2013-2015 (version is limited by HavokContentTools supported versions only so far)
@@ -248,11 +283,11 @@ Okay, so, to export animation for FO4 from max you need:
 * Rig.txt file (because automatic joint finding does not work properly)
 * Preset for HCT which comes with this Kit
 
-So far the most tricky process is getting the correct joints and their ORDER in the Rig.txt file. You can call this file hoever you want, it's just a plain TXT file with a few headers inside [square brackets], you can use my as example. I recommend editing it in Notepad++, since it treats line-changes a bit differently than Windows Notepad. But both should work, thats just paranoia :D
+So far the most tricky process WAS getting the correct joints and their ORDER in the Rig.txt file. You can call this file hoever you want, it's just a plain TXT file with a few headers inside [square brackets], you can use my as example. I recommend editing it in Notepad++, since it treats line-changes a bit differently than Windows Notepad. But both should work, thats just paranoia :D
 
 I am almost 100% certain that the order of joints should be the same as it is inside the skeleton.hkx file. To view it, you can convert it into xml using hkxpack program, which comes with this Kit as well, thanks to DexesTTP. You should be able to get the order of joints from the xml file, as they are defined.
 
-But not all joints should be included. So, trial and error, you can find the right combination, if you're trying to setup Rig.txt for some new skeleton. If you're using humanoid skeleton, I suggest you starting with a copy of the Fallout4Rig_byShadeAnimator.txt and extending it.
+You an also use my tool, it is on git, under HKXPACK_BASED_TOOLS, exe and py versions. It will extract all the data from hkx or xml (by converting hkx to xml first) and create a txt file.
 
 so, steps:
 
@@ -266,10 +301,10 @@ so, steps:
 
 
 Thats all! Just 4 steps.
-[/spoiler]
+~~~~~~~~
 
 Why 3ds max? Why these versions?
-[spoiler]
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
 
 Currently we are limited with the tools available. 3ds max everything required, for latest possible versions, and the most updated ones.
 
@@ -288,7 +323,14 @@ They all have HCT and niftools plugins support. 3ds max 2016 and 2017 are not su
 I will be sticking with 3ds Max 2015, but Animation Kit will also include files for max 2013, which you'll be able to open in 2013 and 2014.
 
 However I can't guarantee that I will save all files under for max 2013.
-[/spoiler]
+~~~~~~~~
 
 I will keep an eye on information about moving animation modding into Maya as well, but Blender guys have to research stuff themselves. I will, hovewer, add information about Blender to this header post, just send it to me, ill review it and post here.
 
+
+
+Need help with animations for your mod? Contact me.
+ShadeAnimator
+~~~~~~~~ ~~~~~~~~~ ~~~~~~~
+I'm open and friendly. Feel free to approach me with ideas of your mods. If I like the idea and have time for it, I will help you with animations. If I don't have time, I will at least help you with consult to the extent of my abilities. Simple as that.
+~~~~~~~~
