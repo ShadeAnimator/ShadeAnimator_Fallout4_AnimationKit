@@ -1,0 +1,12 @@
+ShadeAnimator					Author of the Animation Pack, Guide, Rigs, Preset files, HKXPack UI, etc.
+										Not everything in this pack was made by me!
+										
+MaikCG								Contributed a lot to the research, guide, techniques and rigs
+
+DexesTTP							Author of HKXPack
+
+CPU									A lot of help during research
+
+NIFTools team					NifTools plugin for 3ds max
+
+JoshNZ								Contributed to the research
