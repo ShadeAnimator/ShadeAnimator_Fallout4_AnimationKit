@@ -57,3 +57,4 @@ Tools/HKXPACK_BASED_TOOLS/build/hkxpack_based_tools_ui/warnhkxpack_based_tools_u
 Tools/HKXPACK_BASED_TOOLS/build/hkxpack_based_tools_ui/out00-PYZ.toc
 *.toc
 Tools/HKXPACK_BASED_TOOLS/build/hkxpack_based_tools_ui/out00-PKG.pkg
+*.docx

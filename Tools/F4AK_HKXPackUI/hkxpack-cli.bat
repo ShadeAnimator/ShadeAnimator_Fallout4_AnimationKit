@@ -1,0 +1,1 @@
+java -jar %~dp0hkxpack-cli.jar %1 %2
