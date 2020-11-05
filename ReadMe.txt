@@ -1,3 +1,6 @@
+Sorry to say, but this project was abandoned. Latest 'stable' version can be found on NexusMods here: https://www.nexusmods.com/fallout4/mods/16694
+There's also an explanation as to why, but TLDR it kinda works as is, and I don't have neither time nor interest to work on it much more.
+
 [size=6][color=#00ff00][b]Making animations for Fallout 4.[/b][/color][/size]
 [i]This thread is for animators and modders.[/i]
  
